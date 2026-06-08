@@ -1,0 +1,8 @@
+google-adk>=2.2.0
+google-auth>=2.50.0
+google-cloud-aiplatform>=1.112
+pymongo[srv]>=4.17.0
+fastapi>=0.136.0
+uvicorn>=0.49.0
+python-dotenv>=1.0.0
+dnspython>=2.6.0
