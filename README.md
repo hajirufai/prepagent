@@ -1,18 +1,18 @@
-# PrepAgent — AI Interview Coaching Agent
+# PrepAgent - AI Interview Coaching Agent
 
 > Built for the [Google Cloud Rapid Agent Hackathon](https://googlecloud-rapidagent.devpost.com/) | MongoDB Track
 
-**PrepAgent** is an AI-powered interview coaching agent that helps job seekers practice and improve their interview skills. It generates tailored questions, evaluates answers using structured rubrics, tracks progress over time, and creates personalized study plans.
+PrepAgent is an AI interview coaching agent that helps you practice and improve your interview skills. It generates tailored questions, evaluates your answers with structured rubrics, tracks your progress over time, and creates personalized study plans.
 
-🌐 **Live Demo:** [https://prepagent-k3mbjwurja-uc.a.run.app](https://prepagent-k3mbjwurja-uc.a.run.app)
+**Live Demo:** [https://prepagent-k3mbjwurja-uc.a.run.app](https://prepagent-k3mbjwurja-uc.a.run.app)
 
-## What It Does
+## What it does
 
-- **Practice interviews** across behavioral, technical, system design, and coding categories
-- **Get scored** with detailed feedback on completeness, depth, and communication
-- **Track progress** across sessions with performance trends
-- **Generate study plans** tailored to your target role and weak areas
-- **Access a growing question bank** stored in MongoDB Atlas
+- Practice interviews across behavioral, technical, system design, and coding categories
+- Get scored with feedback on completeness, depth, and communication
+- Track progress across sessions with performance trends
+- Generate study plans tailored to your target role and weak areas
+- Access a growing question bank stored in MongoDB Atlas
 
 ## Architecture
 
@@ -33,17 +33,17 @@
             └───────────────┘
 ```
 
-**4 Specialized Sub-Agents:**
-1. **Question Generator** — Fetches and creates interview questions by category, difficulty, and role
-2. **Answer Evaluator** — Scores responses using STAR method rubrics, provides actionable feedback
-3. **Progress Tracker** — Records sessions and surfaces performance trends
-4. **Study Planner** — Builds personalized prep schedules based on target roles and weak areas
+**4 sub-agents:**
+1. Question Generator - Fetches and creates interview questions by category, difficulty, and role
+2. Answer Evaluator - Scores responses using STAR method rubrics with actionable feedback
+3. Progress Tracker - Records sessions and surfaces performance trends
+4. Study Planner - Builds prep schedules based on target roles and weak areas
 
-## MongoDB Integration
+## MongoDB integration
 
-PrepAgent uses **8 MongoDB tool functions** that demonstrate deep Atlas integration:
+PrepAgent uses 8 MongoDB tool functions with deep Atlas integration:
 
-| Tool | MongoDB Features Used |
+| Tool | MongoDB features used |
 |------|----------------------|
 | `get_questions` | `$match`, `$facet`, compound filters |
 | `get_random_question` | `$sample` aggregation pipeline |
@@ -54,12 +54,12 @@ PrepAgent uses **8 MongoDB tool functions** that demonstrate deep Atlas integrat
 | `get_study_plan` | `find_one` with projection |
 | `get_question_stats` | `$facet` with multiple `$group` pipelines |
 
-**Collections:** `questions`, `practice_sessions`, `study_plans`
+Collections: `questions`, `practice_sessions`, `study_plans`
 
-## Tech Stack
+## Tech stack
 
 | Component | Technology |
-|-----------|-----------|
+|-----------|-----------:|
 | Agent Framework | [Google Agent Development Kit (ADK)](https://google.github.io/adk-docs/) |
 | LLM | Gemini 2.5 Flash via Vertex AI |
 | Database | MongoDB Atlas (M0, AWS us-east-1) |
@@ -67,14 +67,14 @@ PrepAgent uses **8 MongoDB tool functions** that demonstrate deep Atlas integrat
 | Deployment | Google Cloud Run |
 | Container | Docker (Python 3.12-slim) |
 
-## Getting Started
+## Getting started
 
 ### Prerequisites
 - Python 3.12+
 - Google Cloud project with Vertex AI enabled
 - MongoDB Atlas cluster
 
-### Local Development
+### Local development
 
 ```bash
 # Clone the repo
@@ -107,7 +107,7 @@ gcloud run deploy prepagent \
   --set-env-vars "MONGODB_URI=$MONGODB_URI,GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=us-central1,GOOGLE_GENAI_USE_VERTEXAI=TRUE"
 ```
 
-## Project Structure
+## Project structure
 
 ```
 prepagent/
